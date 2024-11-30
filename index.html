@@ -31,6 +31,20 @@
     html.lt-ie-10 .ie-panel {
       display: block;
     }
+
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
   </style>
 </head>
 
@@ -97,14 +111,14 @@
       <section class="section swiper-container swiper-slider swiper-slider-classic" data-loop="true"
         data-autoplay="4859" data-simulate-touch="true" data-direction="vertical" data-nav="false">
         <div class="swiper-wrapper text-center">
-          <div class="swiper-slide" data-slide-bg="images/banner/banner1.jpg">
+          <div class="swiper-slide" data-slide-bg="images/slider/slider1.jpg">
             <div class="swiper-slide-caption section-md">
               <div class="container">
                 <h1 data-caption-animate="fadeInLeft" data-caption-delay="0" style="color: #ffffff;">
                   Excellence in Premium Apparel Fabrics
                 </h1>
                 <p class="text-width-large" data-caption-animate="fadeInRight" data-caption-delay="100"
-                  style="color: #cccccc;">
+                  style="color: #ffffff;">
                   With over 45 years of experience in the fabric trading industry, our family-owned business has been a
                   trusted name in premium and apparel fabrics.
                 </p>
@@ -115,25 +129,43 @@
               </div>
             </div>
           </div>
-          <div class="swiper-slide" data-slide-bg="images/slider-1-slide-4-1770x742.jpg">
+          <div class="swiper-slide" data-slide-bg="images/slider/pexels-karolina-grabowska-6634229.jpg">
             <div class="swiper-slide-caption section-md">
               <div class="container">
-                <h1 data-caption-animate="fadeInLeft" data-caption-delay="0">Experienced Team</h1>
-                <p class="text-width-large" data-caption-animate="fadeInRight" data-caption-delay="100">We are a team of
-                  qualified software developers, aimed at creating unique and powerful tools for your business &
-                  everyday life.</p><a class="button button-primary button-ujarak" href="#modalCta" data-toggle="modal"
-                  data-caption-animate="fadeInUp" data-caption-delay="200">Get in touch</a>
+                <h1 data-caption-animate="fadeInLeft" data-caption-delay="0" style="color: #ffffff;">
+                  Inspire Style and Excellence</h1>
+                <p class="text-width-large" data-caption-animate="fadeInRight" data-caption-delay="100"
+                  style="color: #ffffff;">
+                  Discover the legacy, craftsmanship, and expertise behind our fabrics, designed to inspire style and
+                  excellence.
+                </p>
+                <a class="button button-primary button-ujarak" href="#modalCta" data-toggle="modal"
+                  data-caption-animate="fadeInUp" data-caption-delay="200">
+                  Get in touch
+                </a>
               </div>
             </div>
           </div>
-          <div class="swiper-slide" data-slide-bg="images/slider-1-slide-6-1770x742.jpg">
-            <div class="swiper-slide-caption section-md">
-              <div class="container">
-                <h1 data-caption-animate="fadeInLeft" data-caption-delay="0">Award-Winning Software</h1>
-                <p class="text-width-large" data-caption-animate="fadeInRight" data-caption-delay="100">The software
-                  solutions developed by our company have been numerously awarded for usability and innovative features.
-                </p><a class="button button-primary button-ujarak" href="#modalCta" data-toggle="modal"
-                  data-caption-animate="fadeInUp" data-caption-delay="200">Get in touch</a>
+          <div class="swiper-slide" style="position: relative; overflow: hidden;">
+            <video autoplay muted loop playsinline style="width: 100%; height: auto; object-fit: cover;">
+              <source src="video/stich.mp4" type="video/mp4" />
+              <source src="video/4622445-1280x.webm" type="video/webm" />
+              Your browser does not support the video tag.
+            </video>
+            <div class="swiper-slide-caption section-md"
+              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; z-index: 1;">
+              <div class="container" style="text-align: center; color: white;  padding: 20px; border-radius: 10px;">
+                <h1 data-caption-animate="fadeInLeft" data-caption-delay="0" style="text-align: center; color: white;">
+                  Experienced Team
+                </h1>
+                <p class=" text-width-large" data-caption-animate="fadeInRight" data-caption-delay="100">
+                  Rooted in tradition and driven by innovation, we are proud to transition into a new generation of
+                  leadership, bringing fresh ideas and a vision for growth.
+                </p>
+                <a class="button button-primary button-ujarak" href="#modalCta" data-toggle="modal"
+                  data-caption-animate="fadeInUp" data-caption-delay="200">
+                  Get in touch
+                </a>
               </div>
             </div>
           </div>
