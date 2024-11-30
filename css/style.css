@@ -17,6 +17,27 @@ button:focus {
 	height: 50px !important;
 }
 
+.feature-box:hover {
+	transform: scale(1.05);
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+	animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+
+	0%,
+	100% {
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(1.2);
+	}
+}
+
 button::-moz-focus-inner {
 	border: 0;
 }
