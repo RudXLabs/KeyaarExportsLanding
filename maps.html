@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>International Presence Map</title>
+  <!-- amCharts Libraries -->
+  <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+  <style>
+    /* Map Container */
+    #chartdiv {
+      width: 100%;
+      height: 600px;
+      margin: auto;
+    }
+
+    /* Title Styling */
+    .map-title {
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+      color: #2c3e50;
+    }
+
+    /* Subtitle Styling */
+    .map-subtitle {
+      text-align: center;
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    /* Marker Styling */
+    .amcharts-Bullet {
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="map-title">Our International Presence</div>
+  <div id="chartdiv"></div>
+  <p class="map-subtitle">
+    USA, Mexico, South Africa, Eastern Africa, UAE, UK, Spain, Germany, Eastern Europe, Russia, Thailand, Sri Lanka.
+  </p>
+
+  <script>
+    am5.ready(function () {
+      // Root element
+      var root = am5.Root.new("chartdiv");
+
+      // Set themes
+      root.setThemes([am5themes_Animated.new(root)]);
+
+      // Create the map chart
+      var chart = root.container.children.push(
+        am5map.MapChart.new(root, {
+          panX: "none",
+          panY: "none",
+          projection: am5map.geoMercator()
+        })
+      );
+
+      // Create polygon series for countries
+      var polygonSeries = chart.series.push(
+        am5map.MapPolygonSeries.new(root, {
+          geoJSON: am5geodata_worldLow,
+          exclude: ["AQ"] // Exclude Antarctica
+        })
+      );
+
+      // Highlighted countries
+      var highlightedCountries = [
+        "US", "MX", "ZA", "KE", "UG", "TZ", "AE", "GB", "ES", "DE", "RU", "TH", "LK"
+      ];
+
+      polygonSeries.mapPolygons.template.adapters.add("fill", function (fill, target) {
+        if (highlightedCountries.indexOf(target.dataItem.get("id")) !== -1) {
+          return am5.color("#F39C12"); // Highlighted color
+        }
+        return am5.color("#E5E5E5"); // Default color for other regions
+      });
+
+      // Add point markers
+      var pointSeries = chart.series.push(
+        am5map.MapPointSeries.new(root, {})
+      );
+
+      var markers = [
+        { id: "US", name: "USA", latitude: 38, longitude: -97 },
+        { id: "MX", name: "LATAM Region", latitude: 23, longitude: -102 },
+        { id: "ZA", name: "Africa Regions", latitude: -30, longitude: 25 },
+        { id: "AE", name: "GCC", latitude: 23, longitude: 54 },
+        { id: "GB", name: "Europe CIS Region", latitude: 54, longitude: -2 },
+        { id: "TH", name: "South-East Asia", latitude: 15, longitude: 100 }
+      ];
+
+      markers.forEach(marker => {
+        pointSeries.data.push({
+          geometry: { type: "Point", coordinates: [marker.longitude, marker.latitude] },
+          title: marker.name
+        });
+      });
+
+      pointSeries.bullets.push(function (root, series, dataItem) {
+        var container = am5.Container.new(root, {});
+        container.children.push(
+          am5.Circle.new(root, {
+            radius: 6,
+            tooltipText: "{title}",
+            fill: am5.color("#E74C3C"),
+            strokeWidth: 2,
+            stroke: am5.color("#FFFFFF")
+          })
+        );
+        container.children.push(
+          am5.Label.new(root, {
+            text: "{title}",
+            populateText: true,
+            fontSize: 10,
+            centerX: am5.p50,
+            centerY: am5.p50,
+            dy: 12
+          })
+        );
+        return am5.Bullet.new(root, { sprite: container });
+      });
+
+      // Make the map appear with animation
+      chart.appear(1000, 100);
+    }); // end am5.ready()
+  </script>
+</body>
+
+</html>
