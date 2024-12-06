@@ -69,8 +69,8 @@ button:focus {
 }
 
 .rd-navbar-brand img {
-	width: 223px !important;
-	height: 50px !important;
+	width: 200px !important;
+	height: 75px !important;
 }
 
 .feature-box:hover {
@@ -2797,8 +2797,8 @@ hr {
 .button-primary,
 .button-primary:focus {
 	color: #ffffff;
-	background-color: #6689ff;
-	border-color: #6689ff;
+	background-color: #510e0e;
+	border-color: #411010;
 }
 
 .button-primary:hover,
@@ -11310,7 +11310,7 @@ html.boxed body {
 		-webkit-text-fill-color: transparent;
 		background: -webkit-linear-gradient(transparent, transparent);
 		background: -o-linear-gradient(transparent, transparent);
-		background: linear-gradient(-62deg, #45476f, #6689ff);
+		background: linear-gradient(-62deg, #45476f, #4d0f18);
 		-webkit-background-clip: text;
 	}
 
@@ -13765,7 +13765,7 @@ html.tablet .ui-to-top {
 }
 
 .rd-navbar-static .rd-nav-item.active .rd-nav-link {
-	color: #6689ff;
+	color: #4d0f18;
 	background: transparent;
 }
 
@@ -13795,7 +13795,7 @@ html.tablet .ui-to-top {
 }
 
 .rd-navbar-static .rd-nav-item>.rd-navbar-submenu-toggle:hover {
-	color: #6689ff;
+	color: #4d0f18;
 }
 
 .rd-navbar-static .rd-nav-item>.rd-navbar-submenu {
@@ -14693,7 +14693,7 @@ html.tablet .ui-to-top {
 }
 
 .rd-navbar-fixed .rd-navbar-nav-wrap::-webkit-scrollbar-thumb {
-	background: rgba(102, 137, 255, 0.5);
+	background: #4d0f18;
 	border: none;
 	border-radius: 0;
 	opacity: .2;
