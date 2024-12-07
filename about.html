@@ -10,9 +10,54 @@
   <meta charset="utf-8">
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
   <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/style.css">
   <style>
+    .section-title {
+      font-size: 1.5rem;
+      /* Slightly larger font size */
+      font-weight: 700;
+      /* Bold font for emphasis */
+      color: #2c3e50;
+      /* Dark gray/blue for elegance */
+      text-transform: uppercase;
+      /* Capitalize title for better readability */
+      position: relative;
+      /* For underline hover effect */
+      margin-bottom: 15px;
+      /* Ensures the underline effect aligns properly */
+      padding-bottom: 5px;
+    }
+
+    .section-title:hover {
+      color: #e74c3c;
+      /* Change color on hover for interactivity */
+      cursor: pointer;
+    }
+
+    /* Underline Hover Effect */
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #e74c3c;
+      /* Underline color */
+      transition: width 0.3s ease;
+      margin-top: 5px;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+
+    .section-title:hover::after {
+      width: 100%;
+      /* Expand the underline on hover */
+    }
+
     .icon-box {
       display: flex;
       align-items: center;
@@ -64,24 +109,44 @@
 <br class="page">
 <!-- Page Header -->
 <header class="section page-header">
+  <!-- RD Navbar-->
   <div class="rd-navbar-wrap">
-    <nav class="rd-navbar rd-navbar-classic" data-layout="rd-navbar-fixed">
+    <nav class="rd-navbar rd-navbar-classic" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed"
+      data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static"
+      data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static"
+      data-xxl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px"
+      data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true"
+      data-xxl-stick-up="true">
       <div class="rd-navbar-main-outer">
         <div class="rd-navbar-main">
+          <!-- RD Navbar Panel-->
           <div class="rd-navbar-panel">
+            <!-- RD Navbar Toggle-->
             <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
-            <div class="rd-navbar-brand">
-              <a href="index.html"><img src="images/logo.png" alt="Logo" width="100"></a>
-            </div>
+            <!-- RD Navbar Brand-->
+            <div class="rd-navbar-brand"><img src="images/logo.jpg" alt="" width="100" height="100" /></div>
           </div>
           <div class="rd-navbar-main-element">
             <div class="rd-navbar-nav-wrap">
+              <!-- RD Navbar Share-->
+              <div class="rd-navbar-share fl-bigmug-line-share27" data-rd-navbar-toggle=".rd-navbar-share-list">
+                <ul class="list-inline rd-navbar-share-list">
+                  <li class="rd-navbar-share-list-item"><a class="icon fa fa-facebook" href="#"></a></li>
+                  <li class="rd-navbar-share-list-item"><a class="icon fa fa-twitter" href="#"></a></li>
+                  <li class="rd-navbar-share-list-item"><a class="icon fa fa-google-plus" href="#"></a></li>
+                  <li class="rd-navbar-share-list-item"><a class="icon fa fa-instagram" href="#"></a></li>
+                </ul>
+              </div>
               <ul class="rd-navbar-nav">
-                <li class="rd-nav-item active"><a class="rd-nav-link" href="#home">Home</a></li>
-                <li class="rd-nav-item"><a class="rd-nav-link" href="#services">Services</a></li>
-                <li class="rd-nav-item"><a class="rd-nav-link" href="#clients">Clients</a></li>
-                <li class="rd-nav-item"><a class="rd-nav-link" href="#projects">Projects</a></li>
-                <li class="rd-nav-item"><a class="rd-nav-link" href="#contacts">Contacts</a></li>
+                <!-- Home link pointing to index.html -->
+                <li class="rd-nav-item"><a class="rd-nav-link" href="index.html#home">Home</a></li>
+                <!-- Services link pointing to index.html -->
+                <li class="rd-nav-item"><a class="rd-nav-link" href="index.html#services">Services</a></li>
+                <!-- Projects link pointing to index.html -->
+                <li class="rd-nav-item"><a class="rd-nav-link" href="index.html#projects">Projects</a></li>
+                <!-- Contacts link pointing to index.html -->
+                <li class="rd-nav-item"><a class="rd-nav-link" href="index.html#contacts">Contacts</a></li>
+                <!-- About link pointing to about.html -->
                 <li class="rd-nav-item"><a class="rd-nav-link" href="about.html">About</a></li>
               </ul>
             </div>
@@ -96,69 +161,72 @@
 <section class="section section-lg bg-default">
   <div class="container text-center">
     <h2>About Us</h2>
-    <img src="https://via.placeholder.com/800x400" alt="About Us" class="img-fluid my-4 rounded">
-    <p class="text-muted">
+    <img src="images/slider/slider2.jpg" alt="About Us" class="img-fluid my-4 rounded">
+    <p>
       With over 45 years of experience in the fabric trading industry, our family-owned business has been a trusted
       name in premium apparel fabrics. Based in Mumbai, we specialize in providing high-quality fabrics for various
       apparel categories, catering to both domestic and international markets.
     </p>
   </div>
 </section>
-
 <!-- Mission & Vision Section -->
 <section class="section bg-light">
   <div class="container">
     <div class="row">
       <div class="col-md-6">
         <div class="icon-box">
-          <img src="https://via.placeholder.com/50" alt="Vision Icon">
-          <h3>Our Vision</h3>
+          <h3 class="section-title">Our Vision</h3>
         </div>
-        <p>To be a globally recognized leader in premium apparel fabrics, empowering fashion brands and
-          manufacturers
-          with innovative, sustainable, and high-quality textile solutions.</p>
+        <p>
+          To be a globally recognized leader in premium apparel fabrics, empowering fashion brands and manufacturers
+          with innovative, sustainable, and high-quality textile solutions.
+        </p>
       </div>
       <div class="col-md-6">
         <div class="icon-box">
-          <img src="https://via.placeholder.com/50" alt="Mission Icon">
-          <h3>Our Mission</h3>
+          <h3 class="section-title">Our Mission</h3>
         </div>
-        <p>Our mission is to deliver exceptional fabrics that combine quality, functionality, and style to meet the
-          diverse needs of the apparel industry.</p>
+        <p>
+          Our mission is to deliver exceptional fabrics that combine quality, functionality, and style to meet the
+          diverse needs of the apparel industry.
+        </p>
       </div>
     </div>
   </div>
 </section>
+<br />
+<br />
+
 
 <!-- Values Section -->
 <section class="section values-section">
   <div class="container">
-    <h3 class="text-center">Our Values</h3>
+    <h3 class="text-center section-title">Our Values</h3>
     <div class="row">
       <div class="col-md-3">
         <div class="value-card">
-          <img src="https://via.placeholder.com/60" alt="Quality Icon">
+          <i class="fas fa-award fa-4x"></i>
           <h4>Quality</h4>
           <p>We deliver fabrics that meet the highest standards of craftsmanship.</p>
         </div>
       </div>
       <div class="col-md-3">
         <div class="value-card">
-          <img src="https://via.placeholder.com/60" alt="Innovation Icon">
+          <i class="fas fa-lightbulb fa-4x"></i>
           <h4>Innovation</h4>
           <p>We continuously evolve with cutting-edge solutions.</p>
         </div>
       </div>
       <div class="col-md-3">
         <div class="value-card">
-          <img src="https://via.placeholder.com/60" alt="Sustainability Icon">
+          <i class="fas fa-leaf fa-4x"></i>
           <h4>Sustainability</h4>
           <p>We are committed to eco-friendly practices.</p>
         </div>
       </div>
       <div class="col-md-3">
         <div class="value-card">
-          <img src="https://via.placeholder.com/60" alt="Trust Icon">
+          <i class="fas fa-handshake fa-4x"></i>
           <h4>Trust</h4>
           <p>We build lasting relationships through transparency.</p>
         </div>
@@ -167,14 +235,77 @@
   </div>
 </section>
 
-<!-- Call-to-Action -->
-<section class="section bg-secondary text-center text-white">
+<br />
+<br />
+
+
+<section class="section section-sm section-last bg-default text-left">
   <div class="container">
-    <a class="button button-primary button-ujarak" href="index.html#contacts" data-caption-animate="fadeInUp"
-      data-caption-delay="200" style="color: #f4f4f4;">
-      Get in touch
-    </a>
+    <article class="title-classic">
+      <div class="title-classic-title">
+        <h3>Get in touch</h3>
+      </div>
+      <div class="title-classic-text">
+        <p>If you have any questions, just fill in the contact form, and we will answer you shortly.</p>
+      </div>
+    </article>
+    <!-- Netlify Contact Form -->
+    <form name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true"
+      class="rd-form rd-form-variant-2">
+      <!-- Hidden Input for Netlify Form Name -->
+      <input type="hidden" name="form-name" value="contact">
+
+      <div class="row row-14 gutters-14">
+        <div class="col-md-4">
+          <div class="form-wrap">
+            <input class="form-input" id="contact-your-name-2" type="text" name="name" required>
+            <label class="form-label" for="contact-your-name-2">Your Name</label>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-wrap">
+            <input class="form-input" id="contact-email-2" type="email" name="email" required>
+            <label class="form-label" for="contact-email-2">E-mail</label>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-wrap">
+            <input class="form-input" id="contact-phone-2" type="text" name="phone">
+            <label class="form-label" for="contact-phone-2">Phone</label>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="form-wrap">
+            <label class="form-label" for="contact-message-2">Message</label>
+            <textarea class="form-input textarea-lg" id="contact-message-2" name="message" required></textarea>
+          </div>
+        </div>
+        <!-- Netlify reCAPTCHA -->
+        <div class="col-12">
+          <div data-netlify-recaptcha="true"></div>
+        </div>
+      </div>
+      <button class="button button-primary button-pipaluk" type="submit">Send Message</button>
+    </form>
+
+    <!-- Success Message -->
+    <div id="form-success-message" style="display: none; margin-top: 20px; color: green; text-align: center;">
+      <h4>Thank you for your message!</h4>
+      <p>We have received your inquiry and will get back to you shortly.</p>
+    </div>
   </div>
+
+  <script>
+    // Display success message after form submission
+    document.addEventListener("submit", function (event) {
+      if (event.target.name === "contact") {
+        event.preventDefault(); // Prevent default form submission
+        const form = event.target;
+        form.style.display = "none"; // Hide the form
+        document.getElementById("form-success-message").style.display = "block"; // Show success message
+      }
+    });
+  </script>
 </section>
 </br>
 
