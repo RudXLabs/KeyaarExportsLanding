@@ -256,7 +256,6 @@
       <br />
       <br />
 
-
       <!-- Values Section -->
       <section class="section values-section">
         <div class="container">
@@ -434,7 +433,27 @@
 <!-- Javascript-->
 <script src="js/core.min.js"></script>
 <script src="js/script.js"></script>
-<!-- coded by Himic-->
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Get the current path
+    const currentPath = window.location.pathname;
+
+    // Select all navigation links
+    const navLinks = document.querySelectorAll(".rd-navbar-nav .rd-nav-item");
+
+    // Loop through each link and add 'active' class if the href matches the current path
+    navLinks.forEach((link) => {
+      const anchor = link.querySelector(".rd-nav-link");
+      if (anchor && anchor.getAttribute("href") === currentPath) {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
+      }
+    });
+  });
+</script>
 </body>
 
 </html>
